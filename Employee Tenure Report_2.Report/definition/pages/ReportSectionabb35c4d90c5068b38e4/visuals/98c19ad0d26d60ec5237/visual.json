@@ -1,0 +1,385 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "98c19ad0d26d60ec5237",
+  "position": {
+    "x": 9.4534711964549487,
+    "y": 238.22747415066468,
+    "z": 1000,
+    "width": 1244.0768094534712,
+    "height": 482.12703101920232,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "clubs"
+                    }
+                  },
+                  "Property": "name"
+                }
+              },
+              "queryRef": "clubs.name",
+              "nativeQueryRef": "Club",
+              "displayName": "Club"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "external_id"
+                }
+              },
+              "queryRef": "employee.external_id",
+              "nativeQueryRef": "ID",
+              "displayName": "ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "firstname"
+                }
+              },
+              "queryRef": "employee.firstname",
+              "nativeQueryRef": "First Name",
+              "displayName": "First Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "lastname"
+                }
+              },
+              "queryRef": "employee.lastname",
+              "nativeQueryRef": "Last Name",
+              "displayName": "Last Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "email"
+                }
+              },
+              "queryRef": "employee.email",
+              "nativeQueryRef": "Email",
+              "displayName": "Email"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "title"
+                }
+              },
+              "queryRef": "employee.title",
+              "nativeQueryRef": "Job Title",
+              "displayName": "Job Title"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "employment_type"
+                }
+              },
+              "queryRef": "employee.employment_type",
+              "nativeQueryRef": "Employment Type",
+              "displayName": "Employment Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "startdate"
+                }
+              },
+              "queryRef": "employee.startdate",
+              "nativeQueryRef": "Start Date",
+              "displayName": "Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "employee.status",
+              "nativeQueryRef": "Status",
+              "displayName": "Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "hours_per_week"
+                }
+              },
+              "queryRef": "Sum(employee.hours_per_week)",
+              "nativeQueryRef": "hours_per_week",
+              "displayName": "Hours Per Day"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "employee"
+                    }
+                  },
+                  "Property": "Tenure"
+                }
+              },
+              "queryRef": "Sum(employee.Tenure)",
+              "nativeQueryRef": "Tenure"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "employee"
+                  }
+                },
+                "Property": "external_id"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Arial Black'''"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#91338C'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {}
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119.3604171858029D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "employee.firstname"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64.71078577152188D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "employee.external_id"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "260.90694419608263D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "employee.email"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "254.38392621277325D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "employee.title"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.74889217134417D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(employee.hours_per_week)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.51853730377935D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "employee.employment_type"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filtera2d412133ed12cd5a710",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "enddate"
+          }
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

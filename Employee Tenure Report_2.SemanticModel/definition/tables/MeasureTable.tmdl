@@ -1,0 +1,64 @@
+table MeasureTable
+	lineageTag: b332d120-4c04-4e43-aad3-cdd3a229f8c1
+
+	measure 'New Hires' =
+			
+			
+			DISTINCTCOUNTNOBLANK(employee[external_id])
+		formatString: 0
+		lineageTag: 8dbb494b-d150-4f07-8693-7298228f9563
+
+	measure 'Previous Month Hires' =
+			
+			CALCULATE([New Hires], PREVIOUSMONTH('Calendar'[Date].[Date]))
+		formatString: 0
+		lineageTag: 43e0825a-8c0d-4c61-9428-8d9625be979b
+
+	measure 'End. Head Count' =
+			
+			CALCULATE(DISTINCTCOUNTNOBLANK(employee[email]), employee[status] = "Active")
+		formatString: 0
+		lineageTag: 83b5b285-b011-4a0d-bf16-e12d9b36fef9
+
+	measure New = CALCULATE(DISTINCTCOUNTNOBLANK(employee[email]),employee[New] = 1)
+		formatString: 0
+		lineageTag: 36d13787-540b-44a1-803a-2ae69608e5be
+
+	measure Transfers = CALCULATE(DISTINCTCOUNTNOBLANK(employee[email]),employee[Transfer] = 1)
+		formatString: 0
+		lineageTag: 19c5599b-2f0f-4e23-8187-13dbca7a81ea
+
+	measure Terminate = CALCULATE(DISTINCTCOUNTNOBLANK(employee[email]),employee[Terminate]= 1, not(CONTAINSSTRING(employee[termination_reason], "Redundancy")))
+		formatString: 0
+		lineageTag: c9649f82-2971-47f3-a433-6fc44b147639
+
+	measure 'Vol Terminate' = CALCULATE(DISTINCTCOUNTNOBLANK(employee[email]),employee[Terminate]= 1, CONTAINSSTRING(employee[termination_reason], "Voluntary"))
+		formatString: 0
+		lineageTag: 6e861ae4-e5d3-47fc-a2c2-863830dac79f
+
+	measure 'InVol Terminate' = CALCULATE(DISTINCTCOUNTNOBLANK(employee[email]),employee[Terminate]= 1, NOT(CONTAINSSTRING(employee[termination_reason], "Voluntary")), not(CONTAINSSTRING(employee[termination_reason], "Redundancy")))
+		formatString: 0
+		lineageTag: 39d2a3e6-5132-484d-b3e8-6cc5c9eb049e
+
+	measure 'Beg. Head Count' =
+			
+			[End. Head Count] - [New] + [Terminate] + [Transfers] - [Transfers In]
+		formatString: 0
+		lineageTag: 0dc316ec-3caf-4edb-8df9-0f6181dfc19d
+
+	measure 'Transfers In' = CALCULATE(DISTINCTCOUNTNOBLANK(employee[external_id]),USERELATIONSHIP(clubs[name], employee[NewClub]), employee[Transfer] = 1)
+		formatString: 0
+		lineageTag: 53948fce-7358-4fe1-8f6f-abb672d7aee8
+
+	partition MeasureTable = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

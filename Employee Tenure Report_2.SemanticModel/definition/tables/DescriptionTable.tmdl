@@ -1,0 +1,38 @@
+table DescriptionTable
+	lineageTag: e422d238-67c1-4c1a-97d6-97ccf74817c1
+
+	column Tab
+		dataType: string
+		lineageTag: 5fac9e82-eea6-4ea6-a394-ec840e44ce54
+		summarizeBy: none
+		sourceColumn: Tab
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		lineageTag: 2397accb-0723-4eea-a2c9-be9966122653
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: bf378ab7-2da6-4ee7-9a0e-ae8ee42291ce
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DescriptionTable = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("vVRNTwIxEP0rL72Kmnj3gEgCB8EQ4gU4lO2sNNmdkn4s2X9vt7CrCEZiIpd22sy896Yz08VCTCuylaad6Ikner/DiKTCwAT28WbI6usNbjGhHW4wJ1tqlp4a20p2OVmHaWg8Ps9jFqveEcMkrc/aec2ZR5ZATQ4qt4WpiaIhdeGw034D56X1UA2LZmwtVdoEh9Kw33wH7gRdDu+7HM5TQLLqnLRhWJIubmx8lyOMBWakAivJWX2iqnWLL/P/wjo25NaUUNptC1mTQlaE9Y/SYpGuqMybX3S9mQJXLKZ2iIwRWdqT6o0Z11fTdFenqGmvfXfRme6Kw3l/PK6XD5aPUh6xFP3M64qWImEPgrUU44Zt0Jw4WErjdTD6ZYu8T8RFOuomtUYeFcuEieDiH5BwZ3RQ/Nq+wksKHmlL7k//wcOe3mFNkZHEavUB", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Tab = _t, Measure = _t, Description = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Tab", type text}, {"Measure", type text}, {"Description", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

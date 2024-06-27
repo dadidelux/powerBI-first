@@ -1,0 +1,149 @@
+table clubs
+	lineageTag: 0fdf6be0-11cd-4026-abfd-55900844b0f2
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: b7588438-b7c3-43ac-88de-fbd6325d509a
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column external_id
+		dataType: string
+		lineageTag: 20c1319f-db2b-42b6-943d-5e5a8cb3fce6
+		summarizeBy: none
+		sourceColumn: external_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 085d282a-fa6a-4f26-ae73-426244e92119
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column symbol
+		dataType: string
+		lineageTag: 9a75e82c-8faf-472a-8439-f07a41e30ecd
+		summarizeBy: none
+		sourceColumn: symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column opendate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f6fba4ad-416d-48a8-a7cc-f8ef37cbfc0d
+		summarizeBy: none
+		sourceColumn: opendate
+
+		variation Variation
+			isDefault
+			relationship: 605b27cf-56cb-44bb-9196-532c70167884
+			defaultHierarchy: LocalDateTable_f290e07d-1df0-4d81-b912-a34a79fa3308.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column email
+		dataType: string
+		lineageTag: ef979374-4bd0-4836-ae04-7e97e7afa210
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		lineageTag: 19d98230-284e-4038-b0e7-5cca1dd11d17
+		summarizeBy: none
+		sourceColumn: address
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: 74341c87-b7a9-4d84-a8e4-8a99f16782d2
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column fb_ad_account_id
+		dataType: string
+		lineageTag: e06efc96-06de-4a7c-b84e-1c35a7af88cf
+		summarizeBy: none
+		sourceColumn: fb_ad_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_fb_crawled
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d5d0abaf-6317-4aca-b669-cc8586cd0449
+		summarizeBy: none
+		sourceColumn: last_fb_crawled
+
+		variation Variation
+			isDefault
+			relationship: de05babd-a598-44fa-b8d4-f7ac7b856f59
+			defaultHierarchy: LocalDateTable_815ebb02-e264-447b-8229-2f3c4cda6572.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column keypay_business_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f13f354-a46f-4073-a10f-4c1083a810f2
+		summarizeBy: sum
+		sourceColumn: keypay_business_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_keypay_crawled
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2356d3cb-5b7b-4a6c-b374-dea127400a2f
+		summarizeBy: none
+		sourceColumn: last_keypay_crawled
+
+		variation Variation
+			isDefault
+			relationship: 0db38192-3e2a-46a9-82dc-09bb5282c25a
+			defaultHierarchy: LocalDateTable_535d2cc8-9552-430a-9f0d-d2a45850ef92.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_keypay_payrun_crawled
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e2b1412e-bbab-4dfe-81b2-127cead9cba5
+		summarizeBy: none
+		sourceColumn: last_keypay_payrun_crawled
+
+		variation Variation
+			isDefault
+			relationship: d398959d-e245-452c-99ed-2c5360660219
+			defaultHierarchy: LocalDateTable_f4773df8-1c93-4e97-94ac-d44bda9d0161.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition clubs = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("pfbravo.database.windows.net"),
+				    bravodwh = Source{[Name="bravodwh"]}[Data],
+				    dbo_clubs = bravodwh{[Schema="dbo",Item="clubs"]}[Data]
+				in
+				    dbo_clubs
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,99 @@
+table transfer
+	lineageTag: 884eb8db-4320-473d-a35e-05a75c393cd8
+
+	column email
+		dataType: string
+		lineageTag: 0a93b853-6aee-4e40-ae86-e261c8c7f815
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column enddate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8d569fc1-e10b-4675-8196-2e9adc254671
+		summarizeBy: none
+		sourceColumn: enddate
+
+		variation Variation
+			isDefault
+			relationship: 469fd457-2c48-4ca7-80cb-5cc79d45e8d2
+			defaultHierarchy: LocalDateTable_c7eb941d-c60e-4462-98b7-1c5dd078665c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column startdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: deca2aa3-d561-4416-a065-baa5dadfb3cd
+		summarizeBy: none
+		sourceColumn: startdate
+
+		variation Variation
+			isDefault
+			relationship: 0ad35ea0-6089-42cb-8cf7-bcf49a94551e
+			defaultHierarchy: LocalDateTable_e6f2c935-6660-4f3b-bfde-3dc944801c9f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column transerdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a2916008-077c-4ac9-8a4a-3ee5241ee353
+		summarizeBy: none
+		sourceColumn: transerdate
+
+		variation Variation
+			isDefault
+			relationship: 611f3e37-6058-4da2-b80e-8a8e539707c8
+			defaultHierarchy: LocalDateTable_2a2223bc-e9e4-46b6-83bd-0fcb0901da26.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column termination_reason
+		dataType: string
+		lineageTag: 4da90965-4f73-46fa-a5d9-437bee130853
+		summarizeBy: none
+		sourceColumn: termination_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column newclub
+		dataType: string
+		lineageTag: 725e13e1-72d5-4a65-85de-ca29464365f7
+		summarizeBy: none
+		sourceColumn: newclub
+
+		annotation SummarizationSetBy = Automatic
+
+	column oldclub
+		dataType: string
+		lineageTag: d1aaaaf8-20d8-4daf-b724-7e923c0c5a35
+		summarizeBy: none
+		sourceColumn: oldclub
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key =
+			
+			transfer[email]&"/"&transfer[transerdate].[Date]
+		dataType: string
+		lineageTag: 5a0b554d-37fc-4465-a6bb-2d52168e9f82
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transfer = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("pfbravo.database.windows.net", "bravodwh", [Query="with trans as #(lf)(  SELECT [club_id]#(lf)      ,[email]#(lf)      ,[startdate]#(lf)      ,[enddate]#(lf)      ,[termination_reason]#(lf)#(tab)  ,case when enddate is null then 2#(lf)#(tab)  else ROW_NUMBER() over (partition by email order by enddate desc) +2 end as rn#(lf)  FROM [dbo].[employees]),#(lf)trans2 as ( select [club_id]#(lf)      ,[email]#(lf)      ,[startdate]#(lf)      ,[enddate]#(lf)      ,[termination_reason]#(lf)#(tab)  ,case when enddate is null then 1#(lf)#(tab)  else ROW_NUMBER() over (partition by email order by enddate desc) + 1 end  as rn#(lf)  FROM [dbo].[employees])#(lf)  select #(lf)  e.email,#(lf)  e.enddate,#(lf)  e.startdate,#(lf)  t.enddate as transerdate,#(lf)  t.termination_reason,#(lf)  c.name as newclub,#(lf)  c2.name as oldclub#(lf)  from trans e#(lf)  join trans2 t on e.rn = t.rn and e.email = t.email#(lf)  join clubs c on c.external_id = e.club_id#(lf)   join clubs c2 on c2.external_id = t.club_id"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

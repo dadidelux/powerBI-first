@@ -1,0 +1,381 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "481c27400e0c7b119600",
+  "position": {
+    "x": 9.4534711964549487,
+    "y": 238.22747415066468,
+    "z": 1000,
+    "width": 1244.0768094534712,
+    "height": 482.12703101920232,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "clubs"
+                    }
+                  },
+                  "Property": "name"
+                }
+              },
+              "queryRef": "clubs.name",
+              "nativeQueryRef": "Clubs",
+              "displayName": "Clubs"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Beg. Head Count"
+                }
+              },
+              "queryRef": "MeasureTable.Beg. Head Count",
+              "nativeQueryRef": "Beg. Head Count"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "New"
+                }
+              },
+              "queryRef": "MeasureTable.New",
+              "nativeQueryRef": "New"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Transfers"
+                }
+              },
+              "queryRef": "MeasureTable.Transfers",
+              "nativeQueryRef": "Transfers Out",
+              "displayName": "Transfers Out"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Transfers In"
+                }
+              },
+              "queryRef": "MeasureTable.Transfers In",
+              "nativeQueryRef": "Transfers In"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Terminate"
+                }
+              },
+              "queryRef": "MeasureTable.Terminate",
+              "nativeQueryRef": "Terminate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "InVol Terminate"
+                }
+              },
+              "queryRef": "MeasureTable.InVol Terminate",
+              "nativeQueryRef": "InVol Terminate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Vol Terminate"
+                }
+              },
+              "queryRef": "MeasureTable.Vol Terminate",
+              "nativeQueryRef": "Vol Terminate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "End. Head Count"
+                }
+              },
+              "queryRef": "MeasureTable.End. Head Count",
+              "nativeQueryRef": "End. Head Count"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Arial Black'''"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#91338C'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {}
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.39291910123649D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MeasureTable.New"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.03251164829886D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MeasureTable.Transfers"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter69d15fc005936e7c45ee",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "email"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filtera2d412133ed12cd5a710",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "enddate"
+          }
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter454382b500e0c7d8cc04",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "employment_type"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter94d0c4581bdc36cb615a",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "firstname"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter8ae92a53c46e90120a55",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "title"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter5dd0de39050e0d91cc78",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "lastname"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter08eea34060002a12dd49",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "startdate"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter9ba930cd86b603a30b24",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

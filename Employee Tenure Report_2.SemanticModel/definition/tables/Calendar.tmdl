@@ -1,0 +1,27 @@
+table Calendar
+	lineageTag: 624a1dfe-0a85-4dcb-88d0-24ba74e5b1db
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6b060133-ba3d-45bc-9920-a942b49b39c4
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 9446d723-5787-4f29-9ced-36ac78f7a0c0
+			defaultHierarchy: LocalDateTable_6934c1b4-5c27-4dce-b1e6-4db2ae219dda.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source =
+				
+				CALENDAR(MIN(employee[startdate]), MAX(employee[startdate]))
+
+	annotation PBI_Id = 24f4f60afd184c9cb0a71f35564fe33f
+

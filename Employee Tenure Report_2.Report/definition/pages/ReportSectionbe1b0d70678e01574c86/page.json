@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "name": "ReportSectionbe1b0d70678e01574c86",
+  "displayName": "In Vol Ter",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

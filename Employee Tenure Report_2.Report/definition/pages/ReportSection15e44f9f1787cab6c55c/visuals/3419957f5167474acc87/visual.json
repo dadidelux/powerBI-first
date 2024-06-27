@@ -1,0 +1,295 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "3419957f5167474acc87",
+  "position": {
+    "x": 9.4534711964549487,
+    "y": 105.87887740029542,
+    "z": 1000,
+    "width": 1244.0768094534712,
+    "height": 614.47562776957159,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DescriptionTable"
+                    }
+                  },
+                  "Property": "Tab"
+                }
+              },
+              "queryRef": "DescriptionTable.Tab",
+              "nativeQueryRef": "Tab"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DescriptionTable"
+                    }
+                  },
+                  "Property": "Measure"
+                }
+              },
+              "queryRef": "DescriptionTable.Measure",
+              "nativeQueryRef": "Measure"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DescriptionTable"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "DescriptionTable.Description",
+              "nativeQueryRef": "Description"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Arial Black'''"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#91338C'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {}
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "274.33234022617444D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DescriptionTable.Tab"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "180.48597482957612D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DescriptionTable.Measure"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter69d15fc005936e7c45ee",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "email"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filtera2d412133ed12cd5a710",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "enddate"
+          }
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter454382b500e0c7d8cc04",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "employment_type"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter94d0c4581bdc36cb615a",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "firstname"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter8ae92a53c46e90120a55",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "title"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter5dd0de39050e0d91cc78",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "lastname"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter08eea34060002a12dd49",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "startdate"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter9ba930cd86b603a30b24",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "employee"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

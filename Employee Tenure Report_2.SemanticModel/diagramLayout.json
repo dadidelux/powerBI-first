@@ -1,0 +1,98 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 903.29345565166943,
+        "y": 330.6697373172683
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1725.2934556516693,
+            "y": 1499.2640479010679
+          },
+          "nodeIndex": "Calendar",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 331.495446813091,
+            "y": 1397.0116463781073
+          },
+          "nodeIndex": "employee",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1677.7980088385784,
+            "y": 980.65235635297233
+          },
+          "nodeIndex": "MeasureTable",
+          "nodeLineageTag": "b332d120-4c04-4e43-aad3-cdd3a229f8c1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1677.7980088385784,
+            "y": 833.08925597223231
+          },
+          "nodeIndex": "clubs",
+          "nodeLineageTag": "0fdf6be0-11cd-4026-abfd-55900844b0f2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1677.7980088385784,
+            "y": 754.43633308520828
+          },
+          "nodeIndex": "transfer",
+          "nodeLineageTag": "884eb8db-4320-473d-a35e-05a75c393cd8",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1677.7980088385784,
+            "y": 647.89263510299929
+          },
+          "nodeIndex": "DescriptionTable",
+          "nodeLineageTag": "e422d238-67c1-4c1a-97d6-97ccf74817c1",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 63.809891316891644,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

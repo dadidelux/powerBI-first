@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Employee Tenure Report_2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2d539215-de71-4575-9e94-18fbe81fc6d2"
+  }
+}

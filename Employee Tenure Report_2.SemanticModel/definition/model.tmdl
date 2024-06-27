@@ -1,0 +1,40 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["employee","MeasureTable","clubs","transfer","DescriptionTable"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.130.930.0 (24.06)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table employee
+ref table DateTableTemplate_5e95cb8a-b1e5-40ce-a953-2dc8d8b57547
+ref table Calendar
+ref table LocalDateTable_57f21122-2fd6-46c2-a271-43eb898f70b6
+ref table LocalDateTable_6838d4c4-c339-44cc-b6c6-e120ae666590
+ref table LocalDateTable_3983e722-a42b-4940-8913-005b00335a3a
+ref table LocalDateTable_f49c6ed3-af9c-4abf-9c1d-c88ec9b6068b
+ref table LocalDateTable_6934c1b4-5c27-4dce-b1e6-4db2ae219dda
+ref table MeasureTable
+ref table LocalDateTable_f9c50196-0b1d-4c70-ad32-7ae6f2775841
+ref table LocalDateTable_c01a5dfe-6087-4544-9505-78e99be7ae52
+ref table clubs
+ref table LocalDateTable_f290e07d-1df0-4d81-b912-a34a79fa3308
+ref table LocalDateTable_815ebb02-e264-447b-8229-2f3c4cda6572
+ref table LocalDateTable_535d2cc8-9552-430a-9f0d-d2a45850ef92
+ref table LocalDateTable_f4773df8-1c93-4e97-94ac-d44bda9d0161
+ref table transfer
+ref table LocalDateTable_c7eb941d-c60e-4462-98b7-1c5dd078665c
+ref table LocalDateTable_e6f2c935-6660-4f3b-bfde-3dc944801c9f
+ref table LocalDateTable_2a2223bc-e9e4-46b6-83bd-0fcb0901da26
+ref table DescriptionTable
+
+ref cultureInfo en-US
+
